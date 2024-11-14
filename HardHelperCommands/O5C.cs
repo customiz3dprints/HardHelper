@@ -19,8 +19,8 @@ namespace HardHelper.HardHelperCommands
         public static bool InRoulette = false;
         public string Command { get; } = "O5Command";
         public string[] Aliases { get; } = new[] { "O5C" };
-        public string Description { get; } = "auto O5";
-        public string[] Usage { get; } = new string[] { "playerID" };
+        public string Description { get; } = "Átírja a játékos nevét, majd átállítja scientist role-ra, és megadja az itemeket. Több ID is írható egyszerre";
+        public string[] Usage { get; } = new string[] { "playerID(s)" };
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
             IEnumerable<Player> players = Player.GetProcessedData(arguments);
@@ -29,7 +29,9 @@ namespace HardHelper.HardHelperCommands
             {
                 foreach (Player p in players)
                 {
-                    string newname = $"O5 ({p.DisplayNickname})";
+                    string[] names = { "Ádám", "Bence", "Dávid", "Leó", "Máté", "Márk", "Péter", "Soma", "Zsolt", "Gábor" };
+                    Random random = new Random();
+                    string newname = $"O5 {names.ElementAt(random.Next(0, names.Length - 1))} ({p.DisplayNickname})";
                     response = $"changed name of {p.Nickname}";
                     p.ClearInventory();
                     p.DisplayNickname = newname;

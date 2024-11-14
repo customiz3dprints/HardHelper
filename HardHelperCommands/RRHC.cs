@@ -19,7 +19,7 @@ namespace HardHelper.HardHelperCommands
         public static bool InRoulette = false;
         public string Command { get; } = "RedRightHandCommand";
         public string[] Aliases { get; } = new[] { "RRHC" };
-        public string Description { get; } = "auto RedRightHand";
+        public string Description { get; } = "Átírja a játékos nevét, majd átállítja tutorial role-ra, és megadja az itemeket. Több ID is írható egyszerre";
         public string[] Usage { get; } = new string[] { "playerID(s)" };
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
@@ -29,7 +29,9 @@ namespace HardHelper.HardHelperCommands
             {
                 foreach (Player p in players)
                 {
-                    string newname = $"Red Right Hand ({p.DisplayNickname})";
+                    string[] names = { "Ádám", "Bence", "Dávid", "Leó", "Máté", "Márk", "Péter", "Soma", "Zsolt", "Gábor" };
+                    Random random = new Random();
+                    string newname = $"Red Right Hand {names.ElementAt(random.Next(0, names.Length - 1))} ({p.DisplayNickname})";
                     response = $"changed name of {p.Nickname}";
                     p.ClearInventory();
                     p.DisplayNickname = newname;
