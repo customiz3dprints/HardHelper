@@ -36,9 +36,10 @@ namespace HardHelper.HardHelperCommands
                     Random random = new Random();
                     string newname = $"Kutatás Vezető {names.ElementAt(random.Next(0, names.Length - 1))} ({p.DisplayNickname})";
                     response = $"changed name of {p.Nickname}";
-                    p.ShowHint($"Kutatés vezető {names.ElementAt(random.Next(0, names.Length - 1))} ({p.DisplayNickname})");
+                    
                     p.ClearInventory();
                     p.DisplayNickname = newname;
+                    p.ShowHint($"Kutatés vezető {names.ElementAt(random.Next(0, names.Length - 1))} ({p.DisplayNickname})");
                     p.AddItem(ItemType.Radio);
                     p.AddItem(ItemType.Medkit);
                     p.AddItem(ItemType.KeycardResearchCoordinator);

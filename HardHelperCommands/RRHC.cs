@@ -33,9 +33,10 @@ namespace HardHelper.HardHelperCommands
                     Random random = new Random();
                     string newname = $"Red Right Hand {names.ElementAt(random.Next(0, names.Length - 1))} ({p.DisplayNickname})";
                     response = $"changed name of {p.Nickname}";
-                    p.ShowHint($"Red Right Hand {names.ElementAt(random.Next(0, names.Length - 1))} ({p.DisplayNickname})");
+                    
                     p.ClearInventory();
                     p.DisplayNickname = newname;
+                    p.ShowHint($"Red Right Hand {names.ElementAt(random.Next(0, names.Length - 1))} ({p.DisplayNickname})");
                     p.AddItem(ItemType.GunE11SR);
                     p.AddItem(ItemType.Radio);
                     p.AddItem(ItemType.Ammo556x45, 4);
