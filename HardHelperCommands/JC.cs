@@ -10,16 +10,17 @@ using Exiled.Events.EventArgs.Player;
 using InventorySystem;
 using PluginAPI.Core.Items;
 using UnityEngine;
+using static Org.BouncyCastle.Asn1.Cmp.Challenge;
 
 namespace HardHelper.HardHelperCommands
 {
     [CommandHandler(typeof(RemoteAdminCommandHandler))]
-    public class RRHC : ICommand, IUsageProvider
+    public class JC : ICommand, IUsageProvider
     {
         public static bool InRoulette = false;
-        public string Command { get; } = "RedRightHandCommand";
-        public string[] Aliases { get; } = new[] { "RRHC" };
-        public string Description { get; } = "auto RedRightHand";
+        public string Command { get; } = "JanitorCommand";
+        public string[] Aliases { get; } = new[] { "JC" };
+        public string Description { get; } = "Átírja a játékos nevét, majd átállítja D-class role-ra, és megadja az itemeket. Több ID is írható egyszerre";
         public string[] Usage { get; } = new string[] { "playerID(s)" };
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
@@ -29,18 +30,15 @@ namespace HardHelper.HardHelperCommands
             {
                 foreach (Player p in players)
                 {
-                    string newname = $"Red Right Hand ({p.DisplayNickname})";
+                    string[] names = { "Ádám", "Bence", "Dávid", "Leó", "Máté", "Márk", "Péter", "Soma", "Zsolt", "Gábor" };
+                    Random random = new Random();
+                    string newname = $"Janitor {names.ElementAt(random.Next(0, names.Length - 1))} ({p.DisplayNickname})";
                     response = $"changed name of {p.Nickname}";
                     p.ClearInventory();
                     p.DisplayNickname = newname;
-                    p.AddItem(ItemType.GunE11SR);
-                    p.AddItem(ItemType.Radio);
-                    p.AddItem(ItemType.Ammo556x45, 4);
-                    p.AddItem(ItemType.ArmorHeavy);
-                    p.AddItem(ItemType.Medkit);
-                    p.AddItem(ItemType.KeycardMTFCaptain);
-                    p.Role.Set(PlayerRoles.RoleTypeId.Tutorial, PlayerRoles.RoleSpawnFlags.None);
-                    
+                    p.AddItem(ItemType.KeycardJanitor);
+                    p.Role.Set(PlayerRoles.RoleTypeId.ClassD, PlayerRoles.RoleSpawnFlags.None);
+
                 }
                 response = "Change finished";
                 return true;

@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.8": {
-      "ExMod.Exiled/8.13.1": {
+      "ExMod.Exiled/8.14.0": {
         "type": "package",
         "compile": {
           "lib/net48/Assembly-CSharp-Publicized.dll": {},
@@ -63,7 +63,7 @@
       }
     },
     ".NETFramework,Version=v4.8/win": {
-      "ExMod.Exiled/8.13.1": {
+      "ExMod.Exiled/8.14.0": {
         "type": "package",
         "compile": {
           "lib/net48/Assembly-CSharp-Publicized.dll": {},
@@ -124,7 +124,7 @@
       }
     },
     ".NETFramework,Version=v4.8/win-arm64": {
-      "ExMod.Exiled/8.13.1": {
+      "ExMod.Exiled/8.14.0": {
         "type": "package",
         "compile": {
           "lib/net48/Assembly-CSharp-Publicized.dll": {},
@@ -185,7 +185,7 @@
       }
     },
     ".NETFramework,Version=v4.8/win-x64": {
-      "ExMod.Exiled/8.13.1": {
+      "ExMod.Exiled/8.14.0": {
         "type": "package",
         "compile": {
           "lib/net48/Assembly-CSharp-Publicized.dll": {},
@@ -246,7 +246,7 @@
       }
     },
     ".NETFramework,Version=v4.8/win-x86": {
-      "ExMod.Exiled/8.13.1": {
+      "ExMod.Exiled/8.14.0": {
         "type": "package",
         "compile": {
           "lib/net48/Assembly-CSharp-Publicized.dll": {},
@@ -308,14 +308,14 @@
     }
   },
   "libraries": {
-    "ExMod.Exiled/8.13.1": {
-      "sha512": "pTJQRDRpr90pxFyT0WD2UhAqPQSimH64TuEaBFkeKwDNdvUgN1V1iW2BBZe1Ik+WYtzxEqRanipMCOItpdYA0Q==",
+    "ExMod.Exiled/8.14.0": {
+      "sha512": "3w9rbeoPHFV5vbDAKqpMbdd+uRysKRwsM+cU7vQ38UVaVx3+4ZdwYdJKTkMbc4HJuUzsKbTJ2aIvcHhjA/XQEw==",
       "type": "package",
-      "path": "exmod.exiled/8.13.1",
+      "path": "exmod.exiled/8.14.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "exmod.exiled.8.13.1.nupkg.sha512",
+        "exmod.exiled.8.14.0.nupkg.sha512",
         "exmod.exiled.nuspec",
         "images/Exiled_Icon.png",
         "lib/net48/Assembly-CSharp-Publicized.dll",
@@ -342,7 +342,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.8": [
-      "ExMod.Exiled >= 8.13.1"
+      "ExMod.Exiled >= 8.14.0"
     ]
   },
   "packageFolders": {
@@ -385,7 +385,7 @@
         "dependencies": {
           "ExMod.Exiled": {
             "target": "Package",
-            "version": "[8.13.1, )"
+            "version": "[8.14.0, )"
           }
         }
       }

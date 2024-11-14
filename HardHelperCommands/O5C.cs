@@ -14,35 +14,39 @@ using UnityEngine;
 namespace HardHelper.HardHelperCommands
 {
     [CommandHandler(typeof(RemoteAdminCommandHandler))]
-    public class O5C : ICommand
+    public class O5C : ICommand, IUsageProvider
     {
         public static bool InRoulette = false;
         public string Command { get; } = "O5Command";
         public string[] Aliases { get; } = new[] { "O5C" };
         public string Description { get; } = "auto O5";
-        public string[] Usage { get; } = new[] { "%playerID%" };
+        public string[] Usage { get; } = new string[] { "playerID" };
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
             IEnumerable<Player> players = Player.GetProcessedData(arguments);
-            Player player = players.FirstOrDefault();
-            string newname = "O5";
-            Log.Warn(arguments);
 
             if (players.Any())
             {
-                response = $"{player.Nickname}'s name got changed";
-                player.ClearInventory();
-                player.DisplayNickname = newname;
-                player.AddItem(ItemType.GunRevolver);
-                player.AddItem(ItemType.Radio);
-                player.AddItem(ItemType.Ammo44cal, 4);
-                player.AddItem(ItemType.ArmorLight);
-                player.AddItem(ItemType.Medkit);
-                player.AddItem(ItemType.KeycardO5);
-                player.Role.Set(PlayerRoles.RoleTypeId.Scientist, PlayerRoles.RoleSpawnFlags.None);
+                foreach (Player p in players)
+                {
+                    string newname = $"O5 ({p.DisplayNickname})";
+                    response = $"changed name of {p.Nickname}";
+                    p.ClearInventory();
+                    p.DisplayNickname = newname;
+                    p.AddItem(ItemType.Radio);
+                    p.AddItem(ItemType.GunRevolver);
+                    p.AddItem(ItemType.Ammo44cal, 3);
+                    p.AddItem(ItemType.ArmorCombat);
+                    p.AddItem(ItemType.Medkit);
+                    p.AddItem(ItemType.KeycardO5);
+                    p.Role.Set(PlayerRoles.RoleTypeId.Scientist, PlayerRoles.RoleSpawnFlags.None);
+
+                }
+                response = "Change finished";
+                return true;
             }
-            else response = "invalid ID";
-            return true;
+            response = "invalid usage";
+            return false;
         }
     }
 }

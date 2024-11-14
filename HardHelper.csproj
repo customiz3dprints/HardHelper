@@ -134,13 +134,17 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="HardHelperCommands\KVC.cs" />
     <Compile Include="HardHelperCommands\O5C.cs" />
+    <Compile Include="HardHelperCommands\FMC.cs" />
+    <Compile Include="HardHelperCommands\JC.cs" />
     <Compile Include="HardHelperCommands\RRHC.cs" />
+    <Compile Include="NotCommands\ReName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ExMod.Exiled">
-      <Version>8.13.1</Version>
+      <Version>8.14.0</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
