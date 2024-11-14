@@ -34,6 +34,7 @@ namespace HardHelper.HardHelperCommands
                     Random random = new Random();
                     string newname = $"Facility Manager {names.ElementAt(random.Next(0, names.Length - 1))} ({p.DisplayNickname})";
                     response = $"changed name of {p.Nickname}";
+                    p.ShowHint($"Facility manager {names.ElementAt(random.Next(0, names.Length - 1))} ({p.DisplayNickname})");
                     p.ClearInventory();
                     p.DisplayNickname = newname;
                     p.AddItem(ItemType.Radio);

@@ -33,6 +33,7 @@ namespace HardHelper.HardHelperCommands
                     Random random = new Random();
                     string newname = $"O5 {names.ElementAt(random.Next(0, names.Length - 1))} ({p.DisplayNickname})";
                     response = $"changed name of {p.Nickname}";
+                    p.ShowHint($"O5 {names.ElementAt(random.Next(0, names.Length - 1))} ({p.DisplayNickname})");
                     p.ClearInventory();
                     p.DisplayNickname = newname;
                     p.AddItem(ItemType.Radio);
