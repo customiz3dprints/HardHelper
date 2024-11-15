@@ -17,7 +17,7 @@ namespace HardHelper.HardHelperCommands
     public class CSC : ICommand, IUsageProvider
     {
         public static bool InRoulette = false;
-        public string Command { get; } = "RedRightHandCommand";
+        public string Command { get; } = "ChaosSpyCommand";
         public string[] Aliases { get; } = new[] { "CSC" };
         public string Description { get; } = "Átírja a játékos nevét, majd átállítja Chaos Conscript role-ra, és megadja az itemeket. Több ID is írható egyszerre";
         public string[] Usage { get; } = new string[] { "playerID(s)" };

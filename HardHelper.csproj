@@ -134,11 +134,14 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="HardHelperCommands\CSC.cs" />
     <Compile Include="HardHelperCommands\KVC.cs" />
     <Compile Include="HardHelperCommands\O5C.cs" />
     <Compile Include="HardHelperCommands\FMC.cs" />
     <Compile Include="HardHelperCommands\JC.cs" />
     <Compile Include="HardHelperCommands\RRHC.cs" />
+    <Compile Include="HardHelperCommands\SHC.cs" />
+    <Compile Include="HardHelperCommands\UIUC.cs" />
     <Compile Include="NotCommands\ReName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
