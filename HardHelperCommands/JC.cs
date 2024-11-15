@@ -37,10 +37,10 @@ namespace HardHelper.HardHelperCommands
                     response = $"changed name of {p.Nickname}";
                     
                     p.ClearInventory();
-                    p.ShowHint($"{p.DisplayNickname}");
                     p.AddItem(ItemType.KeycardJanitor);
                     p.Role.Set(PlayerRoles.RoleTypeId.ClassD, PlayerRoles.RoleSpawnFlags.None);
                     p.DisplayNickname = newname;
+                    p.ShowHint($"{p.DisplayNickname}");
 
                 }
                 response = "Change finished";

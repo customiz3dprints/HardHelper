@@ -32,11 +32,10 @@ namespace HardHelper.HardHelperCommands
                     string[] names = { "Ádám", "Bence", "Dávid", "Leó", "Máté", "Márk", "Péter", "Soma", "Zsolt", "Gábor" };
                     Random random = new Random();
                     p.DisplayNickname = null;
-                    string newname = $"Chaos spy {p.DisplayNickname})";
+                    string newname = $"Chaos spy ({p.DisplayNickname})";
                     response = $"changed name of {p.Nickname}";
 
                     p.ClearInventory();
-                    p.ShowHint($"{p.DisplayNickname}");
                     p.AddItem(ItemType.GunCOM18);
                     p.AddItem(ItemType.Radio);
                     p.AddItem(ItemType.Ammo9x19, 4);
@@ -45,6 +44,7 @@ namespace HardHelper.HardHelperCommands
                     p.AddItem(ItemType.KeycardChaosInsurgency);
                     p.Role.Set(PlayerRoles.RoleTypeId.ChaosConscript, PlayerRoles.RoleSpawnFlags.None);
                     p.DisplayNickname = newname;
+                    p.ShowHint($"{p.DisplayNickname}");
 
                 }
                 response = "Change finished";

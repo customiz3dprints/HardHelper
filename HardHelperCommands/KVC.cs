@@ -39,12 +39,12 @@ namespace HardHelper.HardHelperCommands
                     response = $"changed name of {p.Nickname}";
                     
                     p.ClearInventory();
-                    p.ShowHint($"{p.DisplayNickname}");
                     p.AddItem(ItemType.Radio);
                     p.AddItem(ItemType.Medkit);
                     p.AddItem(ItemType.KeycardResearchCoordinator);
                     p.Role.Set(PlayerRoles.RoleTypeId.Scientist, PlayerRoles.RoleSpawnFlags.None);
                     p.DisplayNickname = newname;
+                    p.ShowHint($"{p.DisplayNickname}");
 
                 }
                 response = "Change finished";

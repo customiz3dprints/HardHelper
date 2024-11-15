@@ -36,7 +36,6 @@ namespace HardHelper.HardHelperCommands
                     response = $"changed name of {p.Nickname}";
                     
                     p.ClearInventory();
-                    p.ShowHint($"{p.DisplayNickname}");
                     p.AddItem(ItemType.Radio);
                     p.AddItem(ItemType.GunRevolver);
                     p.AddItem(ItemType.Ammo44cal, 3);
@@ -45,6 +44,7 @@ namespace HardHelper.HardHelperCommands
                     p.AddItem(ItemType.KeycardO5);
                     p.Role.Set(PlayerRoles.RoleTypeId.Scientist, PlayerRoles.RoleSpawnFlags.None);
                     p.DisplayNickname = newname;
+                    p.ShowHint($"{p.DisplayNickname}");
                 }
                 response = "Change finished";
                 return true;
