@@ -31,12 +31,12 @@ namespace HardHelper.HardHelperCommands
                 {
                     string[] names = { "Ádám", "Bence", "Dávid", "Leó", "Máté", "Márk", "Péter", "Soma", "Zsolt", "Gábor" };
                     Random random = new Random();
+                    p.DisplayNickname = null;
                     string newname = $"Red Right Hand {names.ElementAt(random.Next(0, names.Length - 1))} ({p.DisplayNickname})";
                     response = $"changed name of {p.Nickname}";
                     
                     p.ClearInventory();
-                    p.DisplayNickname = newname;
-                    p.ShowHint($"Red Right Hand {names.ElementAt(random.Next(0, names.Length - 1))} ({p.DisplayNickname})");
+                    p.ShowHint($"{p.DisplayNickname}");
                     p.AddItem(ItemType.GunE11SR);
                     p.AddItem(ItemType.Radio);
                     p.AddItem(ItemType.Ammo556x45, 4);
@@ -44,7 +44,8 @@ namespace HardHelper.HardHelperCommands
                     p.AddItem(ItemType.Medkit);
                     p.AddItem(ItemType.KeycardMTFCaptain);
                     p.Role.Set(PlayerRoles.RoleTypeId.Tutorial, PlayerRoles.RoleSpawnFlags.None);
-                    
+                    p.DisplayNickname = newname;
+
                 }
                 response = "Change finished";
                 return true;

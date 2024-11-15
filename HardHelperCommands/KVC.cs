@@ -34,16 +34,17 @@ namespace HardHelper.HardHelperCommands
                 {
                     string[] names = { "Ádám", "Bence", "Dávid", "Leó", "Máté", "Márk", "Péter", "Soma", "Zsolt", "Gábor" };
                     Random random = new Random();
+                    p.DisplayNickname = null;
                     string newname = $"Kutatás Vezető {names.ElementAt(random.Next(0, names.Length - 1))} ({p.DisplayNickname})";
                     response = $"changed name of {p.Nickname}";
                     
                     p.ClearInventory();
-                    p.DisplayNickname = newname;
-                    p.ShowHint($"Kutatés vezető {names.ElementAt(random.Next(0, names.Length - 1))} ({p.DisplayNickname})");
+                    p.ShowHint($"{p.DisplayNickname}");
                     p.AddItem(ItemType.Radio);
                     p.AddItem(ItemType.Medkit);
                     p.AddItem(ItemType.KeycardResearchCoordinator);
                     p.Role.Set(PlayerRoles.RoleTypeId.Scientist, PlayerRoles.RoleSpawnFlags.None);
+                    p.DisplayNickname = newname;
 
                 }
                 response = "Change finished";

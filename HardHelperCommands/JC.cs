@@ -32,14 +32,15 @@ namespace HardHelper.HardHelperCommands
                 {
                     string[] names = { "Ádám", "Bence", "Dávid", "Leó", "Máté", "Márk", "Péter", "Soma", "Zsolt", "Gábor" };
                     Random random = new Random();
+                    p.DisplayNickname = null;
                     string newname = $"Janitor {names.ElementAt(random.Next(0, names.Length - 1))} ({p.DisplayNickname})";
                     response = $"changed name of {p.Nickname}";
                     
                     p.ClearInventory();
-                    p.DisplayNickname = newname;
-                    p.ShowHint($"Janitor {names.ElementAt(random.Next(0, names.Length - 1))} ({p.DisplayNickname})");
+                    p.ShowHint($"{p.DisplayNickname}");
                     p.AddItem(ItemType.KeycardJanitor);
                     p.Role.Set(PlayerRoles.RoleTypeId.ClassD, PlayerRoles.RoleSpawnFlags.None);
+                    p.DisplayNickname = newname;
 
                 }
                 response = "Change finished";
