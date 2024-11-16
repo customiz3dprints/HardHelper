@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CommandSystem;
+using CommandSystem.Commands.RemoteAdmin.ServerEvent;
 using Exiled.API.Extensions;
 using Exiled.API.Features;
 using Exiled.API.Features.Items;
@@ -9,6 +10,8 @@ using Exiled.API.Features.Pickups;
 using Exiled.Events.EventArgs.Player;
 using InventorySystem;
 using PluginAPI.Core.Items;
+using PluginAPI.Events;
+using Respawning;
 using UnityEngine;
 
 namespace HardHelper.HardHelperCommands
@@ -36,16 +39,15 @@ namespace HardHelper.HardHelperCommands
                     response = $"changed name of {p.Nickname}";
 
                     p.ClearInventory();
-                    p.AddItem(ItemType.GunE11SR);
+                    p.AddItem(ItemType.GunA7);
                     p.AddItem(ItemType.Radio);
-                    p.AddItem(ItemType.Ammo556x45, 4);
+                    p.AddItem(ItemType.Ammo762x39, 3);
                     p.AddItem(ItemType.ArmorHeavy);
                     p.AddItem(ItemType.Medkit);
-                    p.AddItem(ItemType.KeycardMTFCaptain);
+                    p.AddItem(ItemType.KeycardChaosInsurgency);
                     p.Role.Set(PlayerRoles.RoleTypeId.Tutorial, PlayerRoles.RoleSpawnFlags.None);
                     p.DisplayNickname = newname;
                     p.ShowHint($"{p.DisplayNickname}");
-
                 }
                 response = "Change finished";
                 return true;
