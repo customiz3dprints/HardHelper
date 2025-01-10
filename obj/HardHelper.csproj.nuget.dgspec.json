@@ -46,23 +46,9 @@
           "dependencies": {
             "ExMod.Exiled": {
               "target": "Package",
-              "version": "[8.14.0, )"
+              "version": "[9.0.0-alpha.2, )"
             }
           }
-        }
-      },
-      "runtimes": {
-        "win": {
-          "#import": []
-        },
-        "win-arm64": {
-          "#import": []
-        },
-        "win-x64": {
-          "#import": []
-        },
-        "win-x86": {
-          "#import": []
         }
       }
     }

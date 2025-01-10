@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "zEFbqkmWucQ=",
+  "dgSpecHash": "t+RXCq4BE4s=",
   "success": true,
   "projectFilePath": "C:\\Users\\Dani\\source\\repos\\HardHelper\\HardHelper\\HardHelper.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Dani\\.nuget\\packages\\exmod.exiled\\8.14.0\\exmod.exiled.8.14.0.nupkg.sha512"
+    "C:\\Users\\Dani\\.nuget\\packages\\exmod.exiled\\9.0.0-alpha.2\\exmod.exiled.9.0.0-alpha.2.nupkg.sha512"
   ],
   "logs": []
 }
